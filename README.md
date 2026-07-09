@@ -19,7 +19,7 @@ Each row carries the enacted budget, transfers, total available, and actual expe
 7. **Ranking** — departments ranked by spending within each fiscal year, using RANK
    ![images/SQL_06_Ranking.png](images/SQL_06_Ranking.png)
 9. **Report pivot** — fiscal years pivoted into columns with CASE statements for a manager-readable summary layout
-   ![images/SQL_07_Report pivot.png](images/SQL_07_Report pivot.png)
+   ![images/SQL_07_Report_pivot.png](images/SQL_07_Report_pivot.png)
 
 The Power BI report sits on top of the cleaned views: a statewide overview page (KPI cards, secretariat ranking, 20-year utilization trend) and a department
 drill-down page (account-level table with variance measures and conditional formatting). Incomplete fiscal years are excluded from the trend line using a
