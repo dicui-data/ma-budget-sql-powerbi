@@ -12,14 +12,20 @@ Each row carries the enacted budget, transfers, total available, and actual expe
 2. **Views** — wrap cleaning and variance logic in live views, so the pipeline updates automatically when source data changes
 3. **Reconciliation** — turn the accounting identities into automated checks (available = enacted budget + net transfers; available − spent = carried forward + reverted).
    One check flagged ~1,600 rows traced to retained-revenue accounts, which follow a different rule
+   ![images/SQL_03_Reconciliation.png](images/SQL_03_Reconciliation.png)
 4. **Variance analysis** — variance, variance %, and utilization %, with divide-by-zero guards on the denominator
 5. **Year-over-year** — change and % change by secretariat, using LAG
-6. **Ranking** — departments ranked by spending within each fiscal year, using RANK
-7. **Report pivot** — fiscal years pivoted into columns with CASE statements for a manager-readable summary layout
+   ![images/SQL_05_Year-over-year.png](images/SQL_05_Year-over-year.png)
+7. **Ranking** — departments ranked by spending within each fiscal year, using RANK
+   ![images/SQL_06_Ranking.png](images/SQL_06_Ranking.png)
+9. **Report pivot** — fiscal years pivoted into columns with CASE statements for a manager-readable summary layout
+    ![images/SQL_07_Report_pivot](images/SQL_07_Report_pivot.png)
 
 The Power BI report sits on top of the cleaned views: a statewide overview page (KPI cards, secretariat ranking, 20-year utilization trend) and a department
 drill-down page (account-level table with variance measures and conditional formatting). Incomplete fiscal years are excluded from the trend line using a
 completeness flag built in SQL.
+![images/PowerBI_01_overview.png](images/PowerBI_01_overview.png)
+![images/PowerBI_02_EOTSS.png](images/PowerBI_02_EOTSS.png)
 
 ## Repository contents
 - `sql/` — scripts numbered by step
